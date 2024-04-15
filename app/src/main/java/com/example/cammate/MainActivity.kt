@@ -10,6 +10,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import com.example.cammate.databinding.ActivityMainBinding
+import com.google.android.material.tabs.TabLayout
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,10 +25,55 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
+        //initnav()
+        initfav()
+        initTabLayout()
+
+        binding.fab.setOnClickListener { view ->
+            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+        }
+    }
+
+    fun initTabLayout() {
+        val tabLayout: TabLayout = findViewById(R.id.tab_layout)
+        val firstFragment: FirstFragment = FirstFragment()
+        val secondFragment: SecondFragment = SecondFragment()
+
+        supportFragmentManager.beginTransaction().replace(R.id.main_view, firstFragment).commit()
+
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                if (tab != null) {
+                    when (tab.position) {
+                        0 -> {
+                            supportFragmentManager.beginTransaction().replace(R.id.main_view, firstFragment).commit()
+                        }
+
+                        1 -> {
+                            supportFragmentManager.beginTransaction().replace(R.id.main_view, secondFragment).commit()
+                        }
+                    }
+                }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+                TODO("Not yet implemented")
+            }
+        })
+    }
+
+    fun initnav() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupActionBarWithNavController(navController, appBarConfiguration)
+    }
 
+    fun initfav() {
         binding.fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()

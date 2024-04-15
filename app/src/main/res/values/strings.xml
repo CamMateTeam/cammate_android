@@ -43,4 +43,6 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="main_ti_make_room">방 만들기</string>
+    <string name="main_ti_find_room">방 찾기</string>
 </resources>
