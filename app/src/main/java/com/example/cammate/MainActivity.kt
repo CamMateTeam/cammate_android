@@ -37,32 +37,32 @@ class MainActivity : AppCompatActivity() {
 
     fun initTabLayout() {
         val tabLayout: TabLayout = findViewById(R.id.tab_layout)
-        val firstFragment: FirstFragment = FirstFragment()
-        val secondFragment: SecondFragment = SecondFragment()
+        val makeRoomFragment: MakeRoomFragment = MakeRoomFragment()
+        val findRoomFragment: FindRoomFragment = FindRoomFragment()
 
-        supportFragmentManager.beginTransaction().replace(R.id.main_view, firstFragment).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.main_view, makeRoomFragment).commit()
 
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 if (tab != null) {
                     when (tab.position) {
                         0 -> {
-                            supportFragmentManager.beginTransaction().replace(R.id.main_view, firstFragment).commit()
+                            supportFragmentManager.beginTransaction().replace(R.id.main_view, makeRoomFragment).commit()
                         }
 
                         1 -> {
-                            supportFragmentManager.beginTransaction().replace(R.id.main_view, secondFragment).commit()
+                            supportFragmentManager.beginTransaction().replace(R.id.main_view, findRoomFragment).commit()
                         }
                     }
                 }
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
-                TODO("Not yet implemented")
+                // to do
             }
 
             override fun onTabReselected(tab: TabLayout.Tab?) {
-                TODO("Not yet implemented")
+                // to do
             }
         })
     }

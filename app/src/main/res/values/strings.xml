@@ -45,4 +45,6 @@
     </string>
     <string name="main_ti_make_room">방 만들기</string>
     <string name="main_ti_find_room">방 찾기</string>
+    <string name="find_room_btn_next">다음</string>
+    <string name="find_cammate_title">내 주변 캠메이트 목록</string>
 </resources>
