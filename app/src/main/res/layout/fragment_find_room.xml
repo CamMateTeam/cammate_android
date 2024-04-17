@@ -18,6 +18,7 @@
             android:layout_marginStart="25dp"
             android:layout_marginTop="25dp"
             android:text="@string/find_cammate_title"
+            android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -28,7 +29,7 @@
             android:layout_height="16dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="20dp"
-            android:src="@drawable/ic_bluetooth"
+            android:src="@drawable/ic_bluethooth"
             app:layout_constraintEnd_toStartOf="@id/iv_find_room_refresh_btn"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,16 +53,16 @@
             android:background="@drawable/round_corner_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_find_room_title" >
+            app:layout_constraintTop_toBottomOf="@id/tv_find_room_title">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_cammate_list"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -80,13 +81,13 @@
             android:id="@+id/btn_find_room_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="60dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="21dp"
+            android:layout_marginBottom="60dp"
             android:text="@string/find_room_btn_next"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_find_room_tip"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/tv_find_room_tip" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
