@@ -2,12 +2,7 @@ package com.example.cammate
 
 import android.os.Bundle
 import android.util.Log
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import androidx.viewpager2.widget.ViewPager2
@@ -17,7 +12,6 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,22 +20,21 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
-
-        //initnav()
-        initfav()
+        setStatusBarTransparent()
+        initToolbar()
         initTabLayout()
+    }
 
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+    fun initToolbar() {
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
+        binding.toolbar.title = "cammate"
     }
 
     fun initTabLayout() {
         val tabTextList = listOf("방 만들기", "방 찾기")
-        val tabLayout: TabLayout = findViewById(R.id.tab_layout)
-        val viewPager: ViewPager2 = findViewById(R.id.main_view_pager)
+        val tabLayout: TabLayout = binding.tabLayout
+        val viewPager: ViewPager2 = binding.mainViewPager
         val pagerAdapter = MainPagerAdapter(this@MainActivity)
 
         pagerAdapter.addFragment(MakeRoomFragment())
@@ -59,25 +52,15 @@ class MainActivity : AppCompatActivity() {
         }.attach()
     }
 
-    fun initfav() {
-        binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
-    }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.menu_main, menu)
+        menuInflater.inflate(R.menu.toolbar_menu, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_setting -> true
+            R.id.action_help -> true
             else -> super.onOptionsItemSelected(item)
         }
     }
