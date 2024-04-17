@@ -50,4 +50,6 @@
     <string name="find_room_tip">Tip: 블루투스로 연결하면 더 쉽게 찾을 수 있어요!</string>
     <string name="action_setting">설정</string>
     <string name="action_help">도움</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
