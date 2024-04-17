@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         setStatusBarTransparent()
         initToolbar()
-        initTabLayout()
+        //initTabLayout()
     }
 
     fun initToolbar() {
@@ -35,17 +35,17 @@ class MainActivity : AppCompatActivity() {
         val tabTextList = listOf("방 만들기", "방 찾기")
         val tabLayout: TabLayout = binding.tabLayout
         val viewPager: ViewPager2 = binding.mainViewPager
-        val pagerAdapter = MainPagerAdapter(this@MainActivity)
-
-        pagerAdapter.addFragment(MakeRoomFragment())
-        pagerAdapter.addFragment(FindRoomFragment())
-        viewPager.adapter = pagerAdapter
-        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-                Log.e("ViewPagerFragment", "Page ${position+1}")
-            }
-        })
+//        val pagerAdapter = MainPagerAdapter(this@MainActivity)
+//
+//        pagerAdapter.addFragment(MakeRoomFragment())
+//        pagerAdapter.addFragment(FindRoomFragment())
+//        viewPager.adapter = pagerAdapter
+//        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+//            override fun onPageSelected(position: Int) {
+//                super.onPageSelected(position)
+//                Log.e("ViewPagerFragment", "Page ${position+1}")
+//            }
+//        })
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = tabTextList[position]
