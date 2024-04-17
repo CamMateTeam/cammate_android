@@ -45,7 +45,7 @@ class FindRoomFragment : Fragment() {
 
         binding.btnFindRoomNext.setOnClickListener {
             try {
-                findNavController().navigate(R.id.action_SecondFragment_to_enterRoomFragment)
+                findNavController().navigate(R.id.action_findRoomFragment_to_enterRoomFragment)
             } catch (e: Exception){
                 Log.d("tag", "에러가 났굼나유")
             }

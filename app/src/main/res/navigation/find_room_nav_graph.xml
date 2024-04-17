@@ -3,26 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/SecondFragment">
+    app:startDestination="@id/FindRoomFragment">
 
     <fragment
-        android:id="@+id/SecondFragment"
+        android:id="@+id/FindRoomFragment"
         android:name="com.example.cammate.find_room.FindRoomFragment"
-        android:label="@string/second_fragment_label"
+        android:label="Find Room Fragment"
         tools:layout="@layout/fragment_find_room">
 
         <action
-            android:id="@+id/action_SecondFragment_to_enterRoomFragment"
-            app:destination="@id/enterRoomFragment" />
+            android:id="@+id/action_findRoomFragment_to_enterRoomFragment"
+            app:destination="@id/EnterRoomFragment" />
     </fragment>
     <fragment
-        android:id="@+id/enterRoomFragment"
+        android:id="@+id/EnterRoomFragment"
         android:name="com.example.cammate.find_room.EnterRoomFragment"
-        android:label="fragment_enter_room"
+        android:label="Enter Room Fragment"
         tools:layout="@layout/fragment_enter_room">
         <action
             android:id="@+id/action_enterRoomFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/FindRoomFragment" />
     </fragment>
 
 </navigation>

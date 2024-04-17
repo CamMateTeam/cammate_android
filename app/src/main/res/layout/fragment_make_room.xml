@@ -13,54 +13,53 @@
 
         <EditText
             android:id="@+id/edit_first"
-            android:hint="닉네임"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:inputType="text"
             android:ems="10"
-            app:layout_constraintTop_toTopOf="parent"
+            android:hint="닉네임"
+            android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/edit_second"
-            android:hint="방 이름"
-            android:ems="10"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:ems="10"
+            android:hint="방 이름"
             android:inputType="text"
-            app:layout_constraintTop_toBottomOf="@id/edit_first"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_first" />
 
         <CheckBox
             android:id="@+id/check_first"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="방 이름 랜덤 생성"
-            app:layout_constraintTop_toBottomOf="@id/edit_second"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_second" />
 
         <EditText
             android:id="@+id/edit_third"
-            android:hint="비밀번호"
-            android:ems="10"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:ems="10"
+            android:hint="비밀번호"
             android:inputType="numberPassword"
-            app:layout_constraintTop_toBottomOf="@id/check_first"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
-
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/check_first" />
 
         <Button
             android:id="@+id/button_first"
@@ -68,11 +67,10 @@
             android:layout_height="wrap_content"
             android:text="@string/main_ti_make_room"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edit_third"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
-
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_third" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

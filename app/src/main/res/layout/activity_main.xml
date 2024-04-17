@@ -28,7 +28,7 @@
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:tabIndicatorColor="@color/black"
         app:tabSelectedTextColor="@color/black"
-        app:tabTextColor="#8D8C86" />
+        app:tabTextColor="@color/gray2" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/main_view_pager"

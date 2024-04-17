@@ -3,7 +3,7 @@ package com.example.cammate
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.cammate.find_room.ContainerFragment
+import com.example.cammate.find_room.FindRoomHostFragment
 import com.example.cammate.make_room.MakeRoomFragment
 
 class MainPagerAdapter(activity: FragmentActivity) :
@@ -17,7 +17,7 @@ class MainPagerAdapter(activity: FragmentActivity) :
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> MakeRoomFragment()
-            1 -> ContainerFragment()
+            1 -> FindRoomHostFragment()
             else -> MakeRoomFragment()
         }
     }
