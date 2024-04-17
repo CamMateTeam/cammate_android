@@ -2,8 +2,19 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Cammate" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">#FFBD87</item>
+        <!-- 상태바 투명화 -->
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 
     <style name="Theme.Cammate" parent="Base.Theme.Cammate" />
+    
+    <!--splash screen theme-->
+    <style name="Splash.Theme.Cammate" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_camera</item> // 안 나타남
+        <item name="windowSplashScreenAnimationDuration">500</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.Cammate</item>
+    </style>
 </resources>
+
