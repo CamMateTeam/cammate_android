@@ -47,4 +47,7 @@
     <string name="main_ti_find_room">방 찾기</string>
     <string name="find_room_btn_next">다음</string>
     <string name="find_cammate_title">내 주변 캠메이트 목록</string>
+    <string name="find_room_tip">Tip: 블루투스로 연결하면 더 쉽게 찾을 수 있어요!</string>
+    <string name="action_setting">설정</string>
+    <string name="action_help">도움</string>
 </resources>

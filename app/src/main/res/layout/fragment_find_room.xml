@@ -12,17 +12,29 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/tv_find_cammate_title"
+            android:id="@+id/tv_find_room_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
             android:layout_marginTop="25dp"
             android:text="@string/find_cammate_title"
+            android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:id="@+id/iv_find_room_bluetooth_btn"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_bluethooth"
+            app:layout_constraintEnd_toStartOf="@id/iv_find_room_refresh_btn"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_find_room_refresh_btn"
             android:layout_width="16dp"
             android:layout_height="16dp"
             android:layout_marginTop="25dp"
@@ -32,26 +44,50 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_cammate_list"
+            android:id="@+id/cl_find_room_cammate_list"
             android:layout_width="0dp"
-            android:layout_height="350dp"
-            android:layout_marginTop="15dp"
+            android:layout_height="400dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
-            android:background="#F5F5F5"
+            android:background="@drawable/round_corner_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_find_cammate_title" />
+            app:layout_constraintTop_toBottomOf="@id/tv_find_room_title">
 
-        <Button
-            android:id="@+id/button_second"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_cammate_list"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_find_room_tip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="15dp"
+            android:text="@string/find_room_tip"
+            android:textColor="@color/gray2"
+            app:layout_constraintStart_toStartOf="@id/cl_find_room_cammate_list"
+            app:layout_constraintTop_toBottomOf="@id/cl_find_room_cammate_list" />
+
+        <Button
+            android:id="@+id/btn_find_room_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="21dp"
+            android:layout_marginBottom="60dp"
             android:text="@string/find_room_btn_next"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cl_cammate_list" />
+            app:layout_constraintTop_toBottomOf="@id/tv_find_room_tip" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
