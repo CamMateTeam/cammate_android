@@ -3,26 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/SecondFragment">
 
-    <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.example.cammate.MakeRoomFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_make_room">
-
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.cammate.FindRoomFragment"
+        android:name="com.example.cammate.find_room.FindRoomFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_find_room">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_SecondFragment_to_enterRoomFragment"
+            app:destination="@id/enterRoomFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/enterRoomFragment"
+        android:name="com.example.cammate.find_room.EnterRoomFragment"
+        android:label="fragment_enter_room"
+        tools:layout="@layout/fragment_enter_room">
+        <action
+            android:id="@+id/action_enterRoomFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+
 </navigation>

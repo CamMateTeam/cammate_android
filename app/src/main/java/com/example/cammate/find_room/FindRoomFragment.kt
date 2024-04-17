@@ -1,16 +1,19 @@
-package com.example.cammate
+package com.example.cammate.find_room
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.cammate.R
 import com.example.cammate.databinding.FragmentFindRoomBinding
+import com.example.cammate.find_room.adapter.CammatesAdapter
+import com.example.cammate.find_room.adapter.CammatesItem
 
 class FindRoomFragment : Fragment() {
-
     private var _binding: FragmentFindRoomBinding? = null
     private val binding get() = _binding!!
     private val cammates = listOf(
@@ -41,7 +44,11 @@ class FindRoomFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnFindRoomNext.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+            try {
+                findNavController().navigate(R.id.action_SecondFragment_to_enterRoomFragment)
+            } catch (e: Exception){
+                Log.d("tag", "에러가 났굼나유")
+            }
         }
     }
 
