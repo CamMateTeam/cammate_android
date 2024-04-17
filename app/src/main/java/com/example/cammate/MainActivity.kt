@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity() {
 
     fun initTabLayout() {
         val tabTextList = listOf("방 만들기", "방 찾기")
-        val tabLayout: TabLayout = findViewById(R.id.tab_layout)
-        val viewPager: ViewPager2 = findViewById(R.id.main_view_pager)
+        val tabLayout: TabLayout = binding.tabLayout
+        val viewPager: ViewPager2 = binding.mainViewPager
         val pagerAdapter = MainPagerAdapter(this@MainActivity)
 
         pagerAdapter.addFragment(MakeRoomFragment())
