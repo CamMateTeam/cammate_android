@@ -1,4 +1,4 @@
-package com.example.cammate
+package com.example.cammate.find_room
 
 import android.os.Bundle
 import android.util.Log

@@ -1,4 +1,4 @@
-package com.example.cammate
+package com.example.cammate.find_room
 
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.cammate.R
 import com.example.cammate.databinding.FragmentFindRoomBinding
 import com.example.cammate.find_room.adapter.CammatesAdapter
 import com.example.cammate.find_room.adapter.CammatesItem

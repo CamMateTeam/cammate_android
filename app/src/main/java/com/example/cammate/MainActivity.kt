@@ -7,6 +7,8 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.viewpager2.widget.ViewPager2
 import com.example.cammate.databinding.ActivityMainBinding
+import com.example.cammate.find_room.ContainerFragment
+import com.example.cammate.make_room.MakeRoomFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
