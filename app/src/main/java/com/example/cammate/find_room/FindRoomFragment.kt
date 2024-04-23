@@ -16,7 +16,7 @@ import com.example.cammate.find_room.adapter.CammatesItem
 class FindRoomFragment : Fragment() {
     private var _binding: FragmentFindRoomBinding? = null
     private val binding get() = _binding!!
-    private val cammates = listOf(
+    private val cammates = listOf( // 더미데이터
         CammatesItem("익명의 오소리 1"),
         CammatesItem("익명의 오소리 2"),
         CammatesItem("익명의 오소리 3"),

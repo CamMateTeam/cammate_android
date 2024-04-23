@@ -7,13 +7,13 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <!-- toolbar menu -->
+    <string name="action_setting">설정</string>
+    <string name="action_help">도움</string>
+
     <!-- find room fragment -->
     <string name="find_room_btn_next">다음</string>
     <string name="find_cammate_title">내 주변 캠메이트 목록</string>
     <string name="find_room_tip">Tip: 블루투스로 연결하면 더 쉽게 찾을 수 있어요!</string>
-
-    <!-- toolbar menu -->
-    <string name="action_setting">설정</string>
-    <string name="action_help">도움</string>
 
 </resources>
