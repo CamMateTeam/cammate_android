@@ -9,7 +9,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.viewpager2.widget.ViewPager2
 import com.example.cammate.databinding.ActivityMainBinding
 import com.example.cammate.find_room.FindRoomHostFragment
-import com.example.cammate.make_room.MakeRoomFragment
+import com.example.cammate.make_room.MakeRoomHostFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         val viewPager: ViewPager2 = binding.mainViewPager
         val pagerAdapter = MainPagerAdapter(this@MainActivity)
 
-        pagerAdapter.addFragment(MakeRoomFragment())
+        pagerAdapter.addFragment(MakeRoomHostFragment())
         pagerAdapter.addFragment(FindRoomHostFragment())
         viewPager.adapter = pagerAdapter
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
