@@ -11,7 +11,6 @@ import com.example.cammate.R
 import com.example.cammate.databinding.FragmentMakeRoomBinding
 
 class MakeRoomFragment : Fragment() {
-
     private var _binding: FragmentMakeRoomBinding? = null
     private val binding get() = _binding!!
 
@@ -20,6 +19,7 @@ class MakeRoomFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMakeRoomBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 
@@ -30,7 +30,7 @@ class MakeRoomFragment : Fragment() {
             try {
                 findNavController().navigate(R.id.action_makeRoomFragment_to_waitingRoomFragment)
             } catch (e: Exception){
-                Log.d("tag", "에러가 났굼나유")
+                Log.d("tag", "${e.message}")
             }
         }
     }

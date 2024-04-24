@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
+    android:id="@+id/make_room_nav_graph"
     app:startDestination="@id/MakeRoomFragment">
 
     <fragment
@@ -20,7 +20,7 @@
         android:name="com.example.cammate.make_room.WaitingRoomFragment"
         android:label="Waiting Room Fragment"
         tools:layout="@layout/fragment_waiting_room">
-    <!--새롭게 액션 추가하면 됨-->
+    <!--새롭게 action 추가하면 됨-->
     </fragment>
 
 </navigation>
