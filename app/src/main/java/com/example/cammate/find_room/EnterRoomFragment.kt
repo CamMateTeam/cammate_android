@@ -27,9 +27,9 @@ class EnterRoomFragment : Fragment() {
 
         view.findViewById<Button>(R.id.btn).setOnClickListener{
             try {
-                //findNavController().navigate(R.id.action_enterRoomFragment_to_SecondFragment)
+                //findNavController().navigate(R.id.action_enterRoomFragment_to)
             } catch (e: Exception){
-                //Log.d("tag", "에러가 났굼나유")
+                //Log.d("tag", "${e.message}")
             }
         }
     }

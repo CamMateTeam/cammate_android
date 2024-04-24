@@ -27,11 +27,7 @@ class MakeRoomFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonFirst.setOnClickListener {
-            try {
-                findNavController().navigate(R.id.action_makeRoomFragment_to_waitingRoomFragment)
-            } catch (e: Exception){
-                Log.d("tag", "${e.message}")
-            }
+            findNavController().navigate(R.id.action_makeRoomFragment_to_waitingRoomFragment)
         }
     }
 
