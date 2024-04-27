@@ -21,8 +21,17 @@
         android:label="Enter Room Fragment"
         tools:layout="@layout/fragment_enter_room">
         <action
-            android:id="@+id/action_enterRoomFragment_to_SecondFragment"
+            android:id="@+id/action_enterRoomFragment_to_FindRoomFragment"
             app:destination="@id/FindRoomFragment" />
+        <action
+            android:id="@+id/action_EnterRoomFragment_to_callerActivity"
+            app:destination="@id/callerActivity" />
     </fragment>
+
+    <activity
+        android:id="@+id/callerActivity"
+        android:name="com.example.cammate.caller.CallerActivity"
+        android:label="activity_caller"
+        tools:layout="@layout/activity_caller" />
 
 </navigation>
