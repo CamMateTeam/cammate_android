@@ -58,5 +58,5 @@ dependencies {
     implementation ("androidx.core:core-splashscreen:1.0.1")
 
     // webrtc
-
+    implementation("io.getstream:stream-webrtc-android:1.1.1")
 }
