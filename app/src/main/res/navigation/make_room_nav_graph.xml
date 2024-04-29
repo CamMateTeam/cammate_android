@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/MakeRoomFragment"
-        android:name="com.example.cammate.make_room.MakeRoomFragment"
+        android:name="com.example.cammate.presentation.viewer.make_room.MakeRoomFragment"
         android:label="Make Room Fragment"
         tools:layout="@layout/fragment_make_room">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/WaitingRoomFragment"
-        android:name="com.example.cammate.make_room.WaitingRoomFragment"
+        android:name="com.example.cammate.presentation.viewer.make_room.WaitingRoomFragment"
         android:label="Waiting Room Fragment"
         tools:layout="@layout/fragment_waiting_room">
     <!--새롭게 action 추가하면 됨-->
