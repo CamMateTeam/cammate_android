@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cammate.R
@@ -44,7 +45,8 @@ class FindRoomFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnFindRoomNext.setOnClickListener {
-            findNavController().navigate(R.id.action_findRoomFragment_to_enterRoomFragment)
+            val bundle = bundleOf("checked_cammate" to "익명의 고양이 1")
+            findNavController().navigate(R.id.action_findRoomFragment_to_enterRoomFragment, bundle)
         }
     }
 
