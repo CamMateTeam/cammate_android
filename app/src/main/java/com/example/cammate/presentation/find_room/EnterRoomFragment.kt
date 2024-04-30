@@ -1,14 +1,11 @@
-package com.example.cammate.find_room
+package com.example.cammate.presentation.viewer.find_room
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.example.cammate.R
 import com.example.cammate.databinding.FragmentEnterRoomBinding
-import com.example.cammate.databinding.FragmentFindRoomBinding
 
 
 class EnterRoomFragment : Fragment() {
