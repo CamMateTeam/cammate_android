@@ -26,8 +26,14 @@ class MakeRoomFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_makeRoomFragment_to_waitingRoomFragment)
+        binding.buttonCreate.setOnClickListener {
+            val nickname:String = binding.editName.text.toString()
+            val password:String = binding.editPassword.text.toString()
+            val sendData = Bundle().also {
+                it.putString("nickname", nickname)
+                it.putString("password", password)
+            }
+            findNavController().navigate(R.id.action_makeRoomFragment_to_waitingRoomFragment,sendData)
         }
     }
 

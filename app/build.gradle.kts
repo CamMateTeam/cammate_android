@@ -36,6 +36,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    
 }
 
 dependencies {
@@ -48,6 +49,7 @@ dependencies {
     // navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+    implementation("androidx.activity:activity:1.8.0")
 
     // test
     testImplementation("junit:junit:4.13.2")
@@ -58,5 +60,15 @@ dependencies {
     implementation ("androidx.core:core-splashscreen:1.0.1")
 
     // webrtc
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.3")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 
+    implementation("com.mesibo.api:webrtc:1.0.5")
+    implementation("org.java-websocket:Java-WebSocket:1.5.3")
+    implementation("com.google.code.gson:gson:2.9.1")
+    implementation("com.guolindev.permissionx:permissionx:1.6.1")
+    // retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 }

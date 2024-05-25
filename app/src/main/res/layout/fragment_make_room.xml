@@ -12,7 +12,7 @@
         android:layout_marginTop="50dp">
 
         <EditText
-            android:id="@+id/edit_first"
+            android:id="@+id/edit_name"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:ems="10"
@@ -24,32 +24,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/edit_second"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:ems="10"
-            android:hint="방 이름"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edit_first" />
-
         <CheckBox
-            android:id="@+id/check_first"
+            android:id="@+id/check_random"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="방 이름 랜덤 생성"
+            android:text="닉네임 랜덤 생성"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edit_second" />
+            app:layout_constraintTop_toBottomOf="@id/edit_name" />
 
         <EditText
-            android:id="@+id/edit_third"
+            android:id="@+id/edit_password"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:ems="10"
@@ -59,10 +46,10 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/check_first" />
+            app:layout_constraintTop_toBottomOf="@id/check_random"/>
 
         <Button
-            android:id="@+id/button_first"
+            android:id="@+id/button_create"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="방 만들기"
@@ -70,7 +57,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edit_third" />
+            app:layout_constraintTop_toBottomOf="@id/edit_password" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

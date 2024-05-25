@@ -16,4 +16,10 @@
     <string name="find_cammate_title">내 주변 캠메이트 목록</string>
     <string name="find_room_tip">Tip: 블루투스로 연결하면 더 쉽게 찾을 수 있어요!</string>
 
+    <!-- network checking fragment -->
+    <string name="network_dialog_offline">네트워크가 불안합니다.\n연결을 확인해주세요</string>
+    <string name="network_dialog_cancel">취소</string>
+    <string name="network_dialog_retry">재시도</string>
+
+
 </resources>
