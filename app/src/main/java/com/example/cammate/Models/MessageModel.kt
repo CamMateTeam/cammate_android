@@ -12,3 +12,4 @@ data class MessageModel(
     @SerializedName("data")
     var data:Any?=null
 )
+

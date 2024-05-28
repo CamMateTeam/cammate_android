@@ -1,4 +1,4 @@
-package com.example.cammate
+package com.example.cammate.utils
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable

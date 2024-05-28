@@ -2,16 +2,20 @@ package com.example.cammate
 
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.viewpager2.widget.ViewPager2
 import com.example.cammate.databinding.ActivityMainBinding
 import com.example.cammate.find_room.FindRoomHostFragment
 import com.example.cammate.make_room.MakeRoomHostFragment
+import com.example.cammate.utils.setStatusBarTransparent
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import java.net.NetworkInterface
+import java.util.Collections
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -67,5 +71,7 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+
 
 }
