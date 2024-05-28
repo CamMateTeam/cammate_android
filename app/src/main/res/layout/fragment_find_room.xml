@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.viewer.find_room.FindRoomFragment">
+    tools:context=".presentation.find_room.FindRoomFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -46,7 +46,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_find_room_cammate_list"
             android:layout_width="0dp"
-            android:layout_height="400dp"
+            android:layout_height="200dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"

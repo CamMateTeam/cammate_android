@@ -60,18 +60,21 @@ dependencies {
     implementation ("androidx.core:core-splashscreen:1.0.1")
 
     // webrtc
-    implementation("io.getstream:stream-webrtc-android:1.1.1")
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.3")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 
-    // coroutine
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
+    implementation("com.mesibo.api:webrtc:1.0.5")
+    implementation("org.java-websocket:Java-WebSocket:1.5.3")
+    implementation("com.google.code.gson:gson:2.9.1")
+    implementation("com.guolindev.permissionx:permissionx:1.6.1")
+    // retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
-    // LifeCycle
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
-
-    // websocket 통신을 위한 OkHttp
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    //okhttps
+    implementation ("com.squareup.okhttp3:okhttp:4.9.1")
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.1")
 
     // 의존성 주입을 위한 Hilt DI
     implementation("com.google.dagger:hilt-android:2.48")

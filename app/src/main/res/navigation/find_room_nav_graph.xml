@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FindRoomFragment"
-        android:name="com.example.cammate.presentation.viewer.find_room.FindRoomFragment"
+        android:name="com.example.cammate.presentation.find_room.FindRoomFragment"
         android:label="Find Room Fragment"
         tools:layout="@layout/fragment_find_room">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/EnterRoomFragment"
-        android:name="com.example.cammate.presentation.viewer.find_room.EnterRoomFragment"
+        android:name="com.example.cammate.presentation.find_room.EnterRoomFragment"
         android:label="Enter Room Fragment"
         tools:layout="@layout/fragment_enter_room">
         <action
