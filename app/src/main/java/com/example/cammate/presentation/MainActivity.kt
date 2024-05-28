@@ -8,9 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.viewpager2.widget.ViewPager2
 import com.example.cammate.databinding.ActivityMainBinding
-import com.example.cammate.find_room.FindRoomHostFragment
-import com.example.cammate.make_room.MakeRoomHostFragment
+import com.example.cammate.presentation.make_room.MakeRoomHostFragment
 import com.example.cammate.utils.setStatusBarTransparent
+import com.example.cammate.presentation.find_room.FindRoomHostFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import java.net.NetworkInterface
@@ -71,7 +71,5 @@ class MainActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
-
-
 
 }

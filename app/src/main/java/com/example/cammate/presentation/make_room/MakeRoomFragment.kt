@@ -1,12 +1,11 @@
-package com.example.cammate.make_room
+package com.example.cammate.presentation.make_room
 
-import android.content.Context
 import android.os.Bundle
 import android.provider.Settings
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.cammate.R
 import com.example.cammate.databinding.FragmentMakeRoomBinding

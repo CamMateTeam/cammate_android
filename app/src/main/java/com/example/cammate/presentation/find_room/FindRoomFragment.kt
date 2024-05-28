@@ -1,17 +1,17 @@
-package com.example.cammate.find_room
+package com.example.cammate.presentation.find_room
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cammate.R
 import com.example.cammate.databinding.FragmentFindRoomBinding
-import com.example.cammate.find_room.adapter.CammatesAdapter
-import com.example.cammate.find_room.adapter.CammatesItem
+import com.example.cammate.presentation.viewer.find_room.adapter.CammatesAdapter
+import com.example.cammate.presentation.viewer.find_room.adapter.CammatesItem
 
 class FindRoomFragment : Fragment() {
     private var _binding: FragmentFindRoomBinding? = null
@@ -44,7 +44,8 @@ class FindRoomFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnFindRoomNext.setOnClickListener {
-            findNavController().navigate(R.id.action_findRoomFragment_to_enterRoomFragment)
+            val bundle = bundleOf("checked_cammate" to "익명의 고양이 1")
+            findNavController().navigate(R.id.action_findRoomFragment_to_enterRoomFragment, bundle)
         }
     }
 

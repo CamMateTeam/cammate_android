@@ -1,15 +1,15 @@
-package com.example.cammate.find_room
+package com.example.cammate.presentation.make_room
 
 import android.os.Bundle
-import android.util.Log
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.example.cammate.databinding.FragmentFindRoomHostBinding
+import com.example.cammate.databinding.FragmentMakeRoomHostBinding
 
-class FindRoomHostFragment : Fragment() {
-    private var _binding: FragmentFindRoomHostBinding? = null
+class MakeRoomHostFragment : Fragment() {
+    private var _binding: FragmentMakeRoomHostBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -17,12 +17,11 @@ class FindRoomHostFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentFindRoomHostBinding.inflate(inflater, container, false)
+        _binding = FragmentMakeRoomHostBinding.inflate(inflater, container, false)
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        Log.d("tag", "컨테이너")
     }
 }

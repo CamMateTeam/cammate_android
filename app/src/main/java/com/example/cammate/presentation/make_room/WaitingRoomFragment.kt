@@ -1,4 +1,4 @@
-package com.example.cammate.make_room
+package com.example.cammate.presentation.make_room
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

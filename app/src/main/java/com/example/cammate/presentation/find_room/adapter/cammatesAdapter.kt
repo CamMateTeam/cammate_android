@@ -1,4 +1,4 @@
-package com.example.cammate.find_room.adapter
+package com.example.cammate.presentation.viewer.find_room.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

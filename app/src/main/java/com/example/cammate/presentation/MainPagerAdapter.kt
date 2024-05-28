@@ -3,8 +3,8 @@ package com.example.cammate
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.cammate.find_room.FindRoomHostFragment
-import com.example.cammate.make_room.MakeRoomHostFragment
+import com.example.cammate.presentation.find_room.FindRoomHostFragment
+import com.example.cammate.presentation.make_room.MakeRoomHostFragment
 
 class MainPagerAdapter(activity: FragmentActivity) :
     FragmentStateAdapter(activity) {
