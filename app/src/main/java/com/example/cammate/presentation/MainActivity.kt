@@ -1,10 +1,16 @@
 package com.example.cammate
 
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.bluetooth.BluetoothAdapter
+import android.bluetooth.BluetoothManager
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
+import androidx.activity.result.ActivityResultLauncher
+import androidx.annotation.RequiresApi
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.viewpager2.widget.ViewPager2
 import com.example.cammate.databinding.ActivityMainBinding
@@ -13,13 +19,19 @@ import com.example.cammate.utils.setStatusBarTransparent
 import com.example.cammate.presentation.find_room.FindRoomHostFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import java.net.NetworkInterface
-import java.util.Collections
 
 
+@RequiresApi(Build.VERSION_CODES.M)
 class MainActivity : AppCompatActivity() {
+    private val REQUEST_CODE_ENABLE_BT: Int = 1
 
     private lateinit var binding: ActivityMainBinding
+
+    private lateinit var bluetoothManager: BluetoothManager
+    private lateinit var bluetoothAdapter: BluetoothAdapter
+
+    // Activity Result Launcher
+    private lateinit var activityResultLauncherBluetooth: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,7 +62,7 @@ class MainActivity : AppCompatActivity() {
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
-                Log.e("ViewPagerFragment", "Page ${position+1}")
+                Log.e("ViewPagerFragment", "Page ${position + 1}")
             }
         })
 
