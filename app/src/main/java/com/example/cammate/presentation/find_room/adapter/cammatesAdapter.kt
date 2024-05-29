@@ -47,7 +47,7 @@ class CammatesAdapter (
         }
 
         fun bind(cammate: CammatesItem, isSelected: Boolean) {
-            binding.roomName.text = cammate.roomName
+            binding.roomName.text = "'" + cammate.roomName + "' 님의 방"
             itemView.isSelected = isSelected
         }
     }
