@@ -11,7 +11,9 @@ data class CammatesItem(
 class CammatesAdapter (
     private var cammates : List<CammatesItem>,
 ):
-    RecyclerView.Adapter<CammateViewHolder>() {
+    RecyclerView.Adapter<CammatesAdapter.CammateViewHolder>() {
+
+    private var selectedPosition = RecyclerView.NO_POSITION
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CammateViewHolder {
         val itemBinding: ItemCammateBinding =
@@ -20,22 +22,34 @@ class CammatesAdapter (
     }
 
     override fun onBindViewHolder(holder: CammateViewHolder, position: Int) {
-        holder.bind(cammates[position])
+        holder.bind(cammates[position], selectedPosition == position)
     }
 
     override fun getItemCount(): Int {
         return cammates.size
     }
 
+    fun getSelectedItem() = if (selectedPosition != RecyclerView.NO_POSITION) cammates[selectedPosition] else null
     fun setData(data: List<CammatesItem>) {
         cammates = data
         notifyDataSetChanged()
     }
-}
 
-class CammateViewHolder(private val binding: ItemCammateBinding): RecyclerView.ViewHolder(binding.root) {
-    fun bind(cammate: CammatesItem) {
-        binding.roomName.text = cammate.roomName
+    inner class CammateViewHolder(private val binding: ItemCammateBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            itemView.setOnClickListener {
+                notifyItemChanged(selectedPosition)
+                selectedPosition = adapterPosition
+                notifyItemChanged(selectedPosition)
+            }
+        }
+
+        fun bind(cammate: CammatesItem, isSelected: Boolean) {
+            binding.roomName.text = "'" + cammate.roomName + "' 님의 방"
+            itemView.isSelected = isSelected
+        }
     }
 }
 

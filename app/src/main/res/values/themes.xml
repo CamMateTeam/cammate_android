@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Cammate" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Cammate" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">#FFBD87</item>
         <!-- 상태바 투명화 -->
