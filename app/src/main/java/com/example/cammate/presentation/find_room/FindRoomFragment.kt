@@ -54,9 +54,12 @@ class FindRoomFragment : Fragment() {
     private val enableBluetoothLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
-                showToast("Bluetooth turned on")
+                showToast("블루투스가 켜졌습니다.")
+                binding.progressBar.visibility = View.GONE
+                binding.progressBarTv.visibility = View.GONE
+                initRecyclerView()
             } else {
-                showToast("Bluetooth enabling canceled")
+                showToast("블루투스 켜기 취소")
             }
         }
 
@@ -72,28 +75,13 @@ class FindRoomFragment : Fragment() {
             ?: throw IllegalStateException("BluetoothManager not found")
         bluetoothAdapter = bluetoothManager.adapter
 
+        // 통신 전 로딩중 프로그레스바
+        binding.progressBar.visibility = View.VISIBLE
+        binding.progressBarTv.visibility = View.VISIBLE
+
         // 블루투스 버튼 클릭 이벤트 리스너
         binding.ivFindRoomBluetoothBtn.setOnClickListener {
-            showToast("블루투스 버튼 클릭")
             enableBT()
-        }
-
-        // 불러온 맥주소 목록들
-        val macAddress = "1.1.1.1" // 맥주소 더미 데이터
-
-        // 레트로핏 방찾기 api 통신
-        lifecycleScope.launch {
-            try {
-                val response = RetrofitBuilder.api.getRooms(macAddress)
-                Log.d("FindRoomFragment", "Room Response: $response")
-                for (room in response.data) {
-                    cammates.add(CammatesItem(room.nickname))
-                }
-                Log.d("FindRoomFragment", "cammmate list : $cammates")
-                initRecyclerView()
-            } catch (e: Exception) {
-                Log.e("FindRoomFragment", "Error: ${e.message}")
-            }
         }
 
         return binding.root
@@ -179,9 +167,27 @@ class FindRoomFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        adapter = CammatesAdapter(cammates)
-        binding.rvCammateList.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        binding.rvCammateList.adapter = adapter
+
+        // 불러온 맥주소 목록들
+        val macAddress = "1.1.1.1" // 맥주소 더미 데이터
+
+        // 레트로핏 방찾기 api 통신
+        lifecycleScope.launch {
+            try {
+                val response = RetrofitBuilder.api.getRooms(macAddress)
+                Log.d("FindRoomFragment", "Room Response: $response")
+                for (room in response.data) {
+                    cammates.add(CammatesItem(room.nickname))
+                }
+                Log.d("FindRoomFragment", "cammmate list : $cammates")
+
+                adapter = CammatesAdapter(cammates)
+                binding.rvCammateList.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+                binding.rvCammateList.adapter = adapter
+            } catch (e: Exception) {
+                Log.e("FindRoomFragment", "Error: ${e.message}")
+            }
+        }
     }
 
     private fun showToast(message: String) {
