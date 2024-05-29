@@ -1,4 +1,4 @@
-package com.example.cammate.Models
+package com.example.cammate.webRTC.Models
 
 class IceCandidateModel(
     val sdpMid:String,

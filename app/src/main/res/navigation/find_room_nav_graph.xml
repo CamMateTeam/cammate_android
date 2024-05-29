@@ -30,8 +30,8 @@
 
     <activity
         android:id="@+id/callerActivity"
-        android:name="com.example.cammate.presentation.viewer.CallerActivity"
+        android:name="com.example.cammate.presentation.viewer.CallActivity"
         android:label="activity_caller"
-        tools:layout="@layout/activity_caller" />
+        tools:layout="@layout/activity_call" />
 
 </navigation>

@@ -38,6 +38,7 @@ class MakeRoomFragment : Fragment() {
                 it.putString("nickname", nickname)
                 it.putString("password", deviceId) //password로 바꿔야 함
             }
+
             val roomData = PostRequest(deviceId,nickname,password)
             val retrofitWork = RetrofitWork(roomData)
             retrofitWork.work()
@@ -59,27 +60,4 @@ class MakeRoomFragment : Fragment() {
         return android_id
     }
 
-    /*fun getWIFIMAC(): String { // not working
-        try {
-            val interfaceName = "wlan0"
-            val interfaces: List<NetworkInterface> =
-                Collections.list(NetworkInterface.getNetworkInterfaces())
-            for (interf in interfaces) {
-                if (!interf.name.equals(interfaceName, ignoreCase = true)) {
-                    continue
-                }
-                val mac = interf.getHardwareAddress() ?: return "nullmac"
-                val buffer = StringBuilder()
-                for (aMac in mac) {
-                    buffer.append(String.format("%02X:", aMac))
-                }
-                if (buffer.length > 0) {
-                    buffer.deleteCharAt(buffer.length - 1)
-                }
-                return buffer.toString()
-            }
-        } catch (ignored: Exception) {
-        }
-        return "00:00:00:00"
-    }*/
 }

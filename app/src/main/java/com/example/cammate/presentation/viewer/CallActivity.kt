@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.WindowManager
 import com.example.cammate.databinding.ActivityCallerBinding
 
-class CallerActivity : AppCompatActivity() {
+class CallActivity : AppCompatActivity() {
     lateinit var binding: ActivityCallerBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

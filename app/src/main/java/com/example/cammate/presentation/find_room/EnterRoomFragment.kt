@@ -28,19 +28,19 @@ class EnterRoomFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var input = requireArguments().getString("checked_cammate")
-        //binding.tvEnterRoom.text = input + "님의\n 방으로 입장하기"
+        var roomName= arguments?.getString("roomName")
+        binding.enteringText.text="$roomName 님의 방으로 입장하기"
+        binding.enterBtn.setOnClickListener{ // socket에 보내기
 
-        //binding.buttonFirst.setOnClickListener{
-
-        //}
+        }
 
 /*        view.findViewById<Button>(R.id.btn).setOnClickListener{
            *//* try {
                 //findNavController().navigate(R.id.action_enterRoomFragment_to)
             } catch (e: Exception){
                 //Log.d("tag", "${e.message}")
-            }*//*
+            }*/
+        /*
             val dialog = NetworkDialog()
             dialog.show((activity as AppCompatActivity).supportFragmentManager, "NetworkDialog")
         }*/

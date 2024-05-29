@@ -5,11 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ListAdapter
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cammate.R
 import com.example.cammate.databinding.FragmentFindRoomBinding
+import com.example.cammate.presentation.viewer.find_room.adapter.CammateViewHolder
 import com.example.cammate.presentation.viewer.find_room.adapter.CammatesAdapter
 import com.example.cammate.presentation.viewer.find_room.adapter.CammatesItem
 
@@ -28,6 +31,7 @@ class FindRoomFragment : Fragment() {
         CammatesItem("익명의 오소리 9"),
         CammatesItem("익명의 오소리 10"),
     )
+    private val listAdapter =  CammatesAdapter(cammates)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,15 +41,27 @@ class FindRoomFragment : Fragment() {
 
         initRecyclerView()
 
+/*        listAdapter.setItemClickListener(object: ListAdapter.OnItemClickListener{
+            override fun onClick(v: View, position: Int) {
+                // 클릭 시 이벤트 작성
+                Toast.makeText(view?.context,
+                    "${cammates[position]}",
+                    Toast.LENGTH_SHORT).show()
+            }
+        })*/
+
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val tmp = "tempData"
         binding.btnFindRoomNext.setOnClickListener {
-            val bundle = bundleOf("checked_cammate" to "익명의 고양이 1")
-            findNavController().navigate(R.id.action_findRoomFragment_to_enterRoomFragment, bundle)
+            val sendData = Bundle().also {
+                it.putString("roomName", tmp)
+            }
+            findNavController().navigate(R.id.action_findRoomFragment_to_enterRoomFragment, sendData)
         }
     }
 
