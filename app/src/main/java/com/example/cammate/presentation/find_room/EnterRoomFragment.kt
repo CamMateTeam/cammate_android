@@ -1,11 +1,13 @@
 package com.example.cammate.presentation.find_room
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.cammate.databinding.FragmentEnterRoomBinding
 
 
@@ -28,8 +30,14 @@ class EnterRoomFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var input = requireArguments().getString("checked_cammate")
-        //binding.tvEnterRoom.text = input + "님의\n 방으로 입장하기"
+        var input = requireArguments().getString("selected_cammate")
+        binding.tvRoomName.text = "'" + input + "' 님의 방으로 입장하기"
+
+        binding.backBtn.setOnClickListener {
+            // requireActivity().supportFragmentManager.popBackStack()
+            findNavController().navigateUp()
+            Log.d("tag", "백버튼 클릭")
+        }
 
         //binding.buttonFirst.setOnClickListener{
 

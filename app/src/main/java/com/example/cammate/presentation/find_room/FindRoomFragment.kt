@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
@@ -29,7 +30,6 @@ import com.example.cammate.network.data.CammateRoomList
 import com.example.cammate.network.data.config.RetrofitBuilder
 import com.example.cammate.presentation.viewer.find_room.adapter.CammatesAdapter
 import com.example.cammate.presentation.viewer.find_room.adapter.CammatesItem
-import com.example.cammate.utils.Constants
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
 
@@ -38,6 +38,7 @@ class FindRoomFragment : Fragment() {
     private var _binding: FragmentFindRoomBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var adapter: CammatesAdapter
     private val cammates = mutableListOf<CammatesItem>()
     lateinit private var cammatelist: CammateRoomList
 
@@ -71,7 +72,7 @@ class FindRoomFragment : Fragment() {
             ?: throw IllegalStateException("BluetoothManager not found")
         bluetoothAdapter = bluetoothManager.adapter
 
-        // 블루투스 버튼 이벤트 클릭 리스너
+        // 블루투스 버튼 클릭 이벤트 리스너
         binding.ivFindRoomBluetoothBtn.setOnClickListener {
             showToast("블루투스 버튼 클릭")
             enableBT()
@@ -101,10 +102,23 @@ class FindRoomFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // 다음 버튼 클릭 이벤트 리스너
         binding.btnFindRoomNext.setOnClickListener {
+            val selectedItem = adapter.getSelectedItem()
+            if (selectedItem != null) {
+                val bundle = Bundle().apply {
+                    putString("selected_cammate", selectedItem.roomName)
+                }
+                findNavController().navigate(R.id.action_findRoomFragment_to_enterRoomFragment, bundle)
+            } else {
+                showToast("방을 선택하세요.")
+            }
+        }
+
+       /* binding.btnFindRoomNext.setOnClickListener {
             val bundle = bundleOf("checked_cammate" to "익명의 고양이 1")
             findNavController().navigate(R.id.action_findRoomFragment_to_enterRoomFragment, bundle)
-        }
+        }*/
     }
 
     override fun onDestroyView() {
@@ -165,8 +179,9 @@ class FindRoomFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
+        adapter = CammatesAdapter(cammates)
         binding.rvCammateList.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        binding.rvCammateList.adapter = CammatesAdapter(cammates)
+        binding.rvCammateList.adapter = adapter
     }
 
     private fun showToast(message: String) {
