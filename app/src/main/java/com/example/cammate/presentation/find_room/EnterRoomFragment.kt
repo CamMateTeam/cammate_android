@@ -30,8 +30,8 @@ class EnterRoomFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        var input = requireArguments().getString("selected_cammate")
-        binding.tvRoomName.text = "'" + input + "' 님의 방으로 입장하기"
+        val nickname = requireArguments().getString("selected_cammate")
+        binding.tvRoomName.text = "'" + nickname + "' 님의 방으로 입장하기"
 
         binding.backBtn.setOnClickListener {
             // requireActivity().supportFragmentManager.popBackStack()
