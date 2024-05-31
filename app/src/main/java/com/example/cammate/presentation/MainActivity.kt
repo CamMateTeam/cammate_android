@@ -15,6 +15,8 @@ import com.example.cammate.databinding.ActivityMainBinding
 import com.example.cammate.presentation.make_room.MakeRoomHostFragment
 import com.example.cammate.utils.setStatusBarTransparent
 import com.example.cammate.presentation.find_room.FindRoomHostFragment
+import com.example.cammate.webRTC.Models.MessageModel
+import com.example.cammate.webRTC.utils.NewMessageInterface
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.android.material.snackbar.Snackbar
@@ -98,5 +100,7 @@ class MainActivity : AppCompatActivity() {
     private fun showToast(message: String) {
         Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
     }
+
+
 
 }
