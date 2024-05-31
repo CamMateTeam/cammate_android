@@ -4,29 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.make_room.WaitingRoomFragment">
+    tools:context=".presentation.make_room.WaitingRoomFragmentMake">
 
     <ProgressBar
-        android:layout_centerInParent="true"
         android:id="@+id/loading_bar_make"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:indeterminate="true"
+        android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:gravity="center"
+        android:indeterminate="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/waiting_text_make"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="waiting text_make"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/loading_bar_make"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/loading_bar_make" />
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/incomingCallLayout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/incomingNameTV"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:text="님이 입장하려고 합니다"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/rejectButton"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:padding="15dp"
+                android:text="거절하기" />
+
+            <TextView
+                android:id="@+id/acceptButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5"
+                android:padding="15dp"
+                android:text="수락하기" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

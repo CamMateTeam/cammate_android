@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/WaitingRoomFragment"
-        android:name="com.example.cammate.presentation.make_room.WaitingRoomFragment"
+        android:name="com.example.cammate.presentation.make_room.WaitingRoomFragmentMake"
         android:label="Waiting Room Fragment"
         tools:layout="@layout/fragment_waiting_room_make">
     <!--새롭게 action 추가하면 됨-->

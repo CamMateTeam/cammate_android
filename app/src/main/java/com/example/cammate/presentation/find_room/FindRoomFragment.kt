@@ -79,7 +79,7 @@ class FindRoomFragment : Fragment() {
         }
 
         // 불러온 맥주소 목록들
-        val macAddress = "1.1.1.1" // 맥주소 더미 데이터
+        val macAddress = "2.2.2.2" // 맥주소 더미 데이터
 
         // 레트로핏 방찾기 api 통신
         lifecycleScope.launch {

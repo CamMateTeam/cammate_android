@@ -24,14 +24,22 @@
             android:id="@+id/action_enterRoomFragment_to_FindRoomFragment"
             app:destination="@id/FindRoomFragment" />
         <action
-            android:id="@+id/action_EnterRoomFragment_to_callerActivity"
-            app:destination="@id/callerActivity" />
+            android:id="@+id/action_EnterRoomFragment_to_WaitingRoomFragmentFind"
+            app:destination="@id/WaitingRoomFragmentFind" />
     </fragment>
 
-    <activity
+    <fragment
+        android:id="@+id/WaitingRoomFragmentFind"
+        android:name="com.example.cammate.presentation.find_room.WaitingRoomFragmentFind"
+        android:label="Waiting Room Find Fragment"
+        tools:layout="@layout/fragment_waiting_room_find">
+        <!--새롭게 action 추가하면 됨-->
+    </fragment>
+
+<!--    <activity
         android:id="@+id/callerActivity"
         android:name="com.example.cammate.presentation.viewer.CallActivity"
         android:label="activity_caller"
-        tools:layout="@layout/activity_call" />
+        tools:layout="@layout/activity_call" />-->
 
 </navigation>
