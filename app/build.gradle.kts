@@ -2,7 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
-    id("com.google.dagger.hilt.android")
+    //id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -79,8 +79,18 @@ dependencies {
     implementation ("com.squareup.okhttp3:logging-interceptor:4.9.1")
 
     // 의존성 주입을 위한 Hilt DI
-    implementation("com.google.dagger:hilt-android:2.48")
-    kapt("com.google.dagger:hilt-android-compiler:2.48")
+    //implementation("com.google.dagger:hilt-android:2.48")
+    //kapt("com.google.dagger:hilt-android-compiler:2.48")
+
+    // socket 통신
+    implementation("com.tinder.scarlet:scarlet:0.1.12")
+    implementation("com.tinder.scarlet:websocket-okhttp:0.1.12")
+    implementation("com.tinder.scarlet:stream-adapter-rxjava2:0.1.12")
+
+    //RX
+    implementation("io.reactivex.rxjava2:rxjava:2.2.21")
+    implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
+    implementation("io.reactivex.rxjava2:rxkotlin:2.4.0")
 
     // api 서버와 통신하기 위한 retrofit2
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
