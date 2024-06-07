@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="@color/salmon" /> <!-- 배경 색 -->
+    <size
+        android:width="100dp" /><!-- 원의 너비 -->
+    android:height="100dp" /> <!-- 원의 높이 -->
+</shape>
