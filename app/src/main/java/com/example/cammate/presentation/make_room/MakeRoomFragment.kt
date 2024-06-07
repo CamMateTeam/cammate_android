@@ -15,6 +15,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.cammate.R
 import com.example.cammate.databinding.FragmentMakeRoomBinding
 import com.example.cammate.presentation.chatting.ChatFragment
+import com.example.cammate.presentation.utils.animals
+import com.example.cammate.presentation.utils.determiners
 import com.example.cammate.retrofit.PostRoom.PostRequest
 import com.example.cammate.retrofit.RetrofitWork
 import com.example.cammate.webRTC.Models.IceCandidateModel
@@ -28,6 +30,7 @@ import com.permissionx.guolindev.PermissionX
 import org.webrtc.IceCandidate
 import org.webrtc.MediaStream
 import org.webrtc.SessionDescription
+import java.util.Random
 
 
 class MakeRoomFragment : Fragment(){
@@ -50,6 +53,18 @@ class MakeRoomFragment : Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val deviceId = getDeviceUid()
+
+        // 랜덤 이름 체크박스
+        binding.checkRandom.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                val randomDeterminer = determiners[Random().nextInt(determiners.size)]
+                val randomAnimal = animals[Random().nextInt(animals.size)]
+                val randomName = "$randomDeterminer $randomAnimal"
+                binding.editName.setText(randomName)
+            }
+        }
+
+        // 방 만들기 버튼
         binding.buttonCreate.setOnClickListener {
             PermissionX.init(requireActivity())
                 .permissions(
@@ -72,13 +87,6 @@ class MakeRoomFragment : Fragment(){
                         Toast.makeText(requireActivity(),"you should accept all permissions",Toast.LENGTH_LONG).show()
                     }
                 }
-
-            /*try {
-                val bottomsheet: BottomSheetDialogFragment = ChatFragment()
-                bottomsheet.show(requireFragmentManager(), "bottomsheet")
-            } catch (e: Exception){
-                Log.d("tag", "${e}")
-            }*/
         }
     }
 
@@ -92,7 +100,6 @@ class MakeRoomFragment : Fragment(){
             context?.contentResolver,
             Settings.Secure.ANDROID_ID
         )
-
         return android_id
     }
 

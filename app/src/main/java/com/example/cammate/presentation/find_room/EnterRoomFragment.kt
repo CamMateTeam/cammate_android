@@ -10,6 +10,9 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.cammate.R
 import com.example.cammate.databinding.FragmentEnterRoomBinding
+import com.example.cammate.presentation.utils.animals
+import com.example.cammate.presentation.utils.determiners
+import java.util.Random
 
 
 class EnterRoomFragment : Fragment() {
@@ -37,6 +40,16 @@ class EnterRoomFragment : Fragment() {
 /*        roomName = arguments?.getString("roomName")
         binding.enteringText.text = "$roomName 님의 방으로 입장하기"*/
 
+        // 랜덤 이름 체크박스
+        binding.checkRandom.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                val randomDeterminer = determiners[Random().nextInt(determiners.size)]
+                val randomAnimal = animals[Random().nextInt(animals.size)]
+                val randomName = "$randomDeterminer $randomAnimal"
+                binding.editName.setText(randomName)
+            }
+        }
+
         binding.btn.setOnClickListener {
             userName = binding.editName.text.toString() // 입장하려는 사람 이름
             val password: String = binding.editPassword.text.toString()
@@ -52,7 +65,8 @@ class EnterRoomFragment : Fragment() {
             val retrofitWork = RetrofitWork(roomData)
             retrofitWork.work()*/
             findNavController().navigate(R.id.action_EnterRoomFragment_to_WaitingRoomFragmentFind,sendData)
-        binding.backBtn.setOnClickListener {
+
+            binding.backBtn.setOnClickListener {
             // requireActivity().supportFragmentManager.popBackStack()
             findNavController().navigateUp()
             Log.d("tag", "백버튼 클릭")
