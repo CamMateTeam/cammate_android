@@ -1,4 +1,4 @@
-package com.example.cammate.utils
+package com.example.cammate.presentation.utils
 
 import android.app.Activity
 import android.os.Build
