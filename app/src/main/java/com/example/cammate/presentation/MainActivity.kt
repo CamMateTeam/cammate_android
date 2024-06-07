@@ -100,7 +100,4 @@ class MainActivity : AppCompatActivity() {
     private fun showToast(message: String) {
         Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
     }
-
-
-
 }

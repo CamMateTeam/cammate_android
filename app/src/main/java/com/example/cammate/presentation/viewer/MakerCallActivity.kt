@@ -6,12 +6,14 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.example.cammate.databinding.ActivityMakerCallBinding
+import com.example.cammate.presentation.chatting.ChatFragment
 import com.example.cammate.webRTC.Models.IceCandidateModel
 import com.example.cammate.webRTC.Models.MessageModel
 import com.example.cammate.webRTC.RTCClient
 import com.example.cammate.webRTC.SocketRepository
 import com.example.cammate.webRTC.utils.NewMessageInterface
 import com.example.cammate.webRTC.utils.PeerConnectionObserver
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.gson.Gson
 import org.webrtc.IceCandidate
 import org.webrtc.MediaStream
@@ -42,6 +44,15 @@ class MakerCallActivity : AppCompatActivity() , NewMessageInterface {
         roomName += "01"
 
         init()
+
+        binding.btnChatting.setOnClickListener{
+            try {
+                val bottomsheet: BottomSheetDialogFragment = ChatFragment()
+                bottomsheet.show(supportFragmentManager, "bottomsheet")
+            } catch (e: Exception){
+                Log.d("tag", "${e}")
+            }
+        }
 
     }
     private fun init(){
