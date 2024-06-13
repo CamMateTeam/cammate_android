@@ -138,13 +138,20 @@ class WaitingRoomFragmentMake : Fragment(), NewMessageInterface {
                 roomName = message.name!!
                 Log.d("offer_Received", "offer_received")
                 requireActivity().runOnUiThread{
+                    // 원래 글자 안 보이게
+                    binding.waitingTextMake.visibility = View.GONE
                     binding.loadingBarMake.visibility = View.GONE
+
+                    // 알림창 뜨게
                     binding.incomingCallLayout.visibility = View.VISIBLE
 
+                    // 거절 시
                     binding.rejectButton.setOnClickListener {
                         binding.incomingCallLayout.visibility = View.GONE
                         // incomingCallLayout invisible
                     }
+
+                    // 수락 시
                     binding.acceptButton.setOnClickListener {
                         // find waitfragment한테 함수 보내서 (find에서 함수값 체크하고? intent로 callActivity로 넘어가)
                         val intent = Intent(getActivity(), MakerCallActivity::class.java)

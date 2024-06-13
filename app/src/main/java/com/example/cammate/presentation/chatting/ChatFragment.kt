@@ -58,7 +58,7 @@ class ChatFragment : BottomSheetDialogFragment() {
 
         //Let's connect to our Chat room! :D
         try {
-            mSocket = IO.socket("http://10.0.2.2:3001/")
+            mSocket = IO.socket("http://13.125.228.93:3001/") // http://10.0.0.2:3001/
             mSocket.connect()
             if (mSocket.connected()) {
                 Log.d(TAG, "서버에 연결되었습니다.")
