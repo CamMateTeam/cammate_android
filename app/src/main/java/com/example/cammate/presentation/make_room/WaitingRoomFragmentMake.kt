@@ -43,7 +43,7 @@ class WaitingRoomFragmentMake : Fragment(), NewMessageInterface {
         super.onViewCreated(view, savedInstanceState)
         userName = arguments?.getString("nickname")
         val password = arguments?.getString("password")
-        binding.waitingTextMake.text = "비밀번호 : $password \n $userName 님의 방에 사람이 들어올 때까지 대기중입니다"
+        binding.waitingTextMake.text = "비밀번호 : $password \n $userName 님의 방에\n 사람이 들어올 때까지 대기중입니다\n"
         init()
     }
 
@@ -139,6 +139,7 @@ class WaitingRoomFragmentMake : Fragment(), NewMessageInterface {
                 Log.d("offer_Received", "offer_received")
                 requireActivity().runOnUiThread{
                     binding.loadingBarMake.visibility = View.GONE
+                    binding.incomingNameTV.text = "$roomName 님이 입장하려고 합니다"
                     binding.incomingCallLayout.visibility = View.VISIBLE
 
                     binding.rejectButton.setOnClickListener {

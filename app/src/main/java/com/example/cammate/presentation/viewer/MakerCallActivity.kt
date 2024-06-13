@@ -1,10 +1,12 @@
 package com.example.cammate.presentation.viewer
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.example.cammate.MainActivity
 import com.example.cammate.databinding.ActivityMakerCallBinding
 import com.example.cammate.presentation.chatting.ChatFragment
 import com.example.cammate.webRTC.Models.IceCandidateModel
@@ -83,6 +85,15 @@ class MakerCallActivity : AppCompatActivity() , NewMessageInterface {
 
             }
         })
+
+//        binding.btnCamera.setOnClickListener {
+//            val intent = Intent(this, MainActivity::class.java)
+//            startActivity(intent)
+//        }
+        binding.btnEndCall.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         socketRepository?.sendMessageToSocket(MessageModel(
             "start_call",userName,roomName,null

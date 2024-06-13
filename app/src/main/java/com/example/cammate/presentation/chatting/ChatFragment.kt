@@ -12,8 +12,11 @@ import com.google.gson.Gson
 import io.socket.client.IO
 import io.socket.client.Socket
 import io.socket.emitter.Emitter
+import org.java_websocket.client.WebSocketClient
+import org.java_websocket.handshake.ServerHandshake
 import org.json.JSONException
 import org.json.JSONObject
+import java.net.URI
 
 class ChatFragment : BottomSheetDialogFragment() {
 
@@ -24,7 +27,7 @@ class ChatFragment : BottomSheetDialogFragment() {
     lateinit var mSocket: Socket
     lateinit var userName: String
     lateinit var roomName: String
-
+    private var webSocket: WebSocketClient? = null
 
     val gson: Gson = Gson()
 
@@ -56,9 +59,29 @@ class ChatFragment : BottomSheetDialogFragment() {
         val layoutManager = LinearLayoutManager(requireActivity())
         binding.rvChatting.layoutManager = layoutManager
 
+
+        webSocket = object : WebSocketClient(URI("ws://13.125.228.93:3001")){
+            override fun onOpen(handshakedata: ServerHandshake?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onMessage(message: String?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onClose(code: Int, reason: String?, remote: Boolean) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onError(ex: java.lang.Exception?) {
+                TODO("Not yet implemented")
+            }
+
+        }
         //Let's connect to our Chat room! :D
+        // http://10.0.2.2:3001/
         try {
-            mSocket = IO.socket("http://10.0.2.2:3001/")
+            mSocket = IO.socket("http://13.125.228.93:3001/")
             mSocket.connect()
             if (mSocket.connected()) {
                 Log.d(TAG, "서버에 연결되었습니다.")
@@ -93,7 +116,9 @@ class ChatFragment : BottomSheetDialogFragment() {
             if (message.isNotEmpty()) {
                 sendMessage(message)
                 binding.editText.setText("")
+                Log.d("chat", "success")
             }
+
         }
 
         /*mSocket.on(Socket.EVENT_CONNECT, onConnect)

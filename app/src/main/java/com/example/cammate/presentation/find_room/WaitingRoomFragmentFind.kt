@@ -47,7 +47,7 @@ class WaitingRoomFragmentFind : Fragment(), NewMessageInterface {
         userName = arguments?.getString("userName")
         roomName = arguments?.getString("roomName")
         val password = arguments?.getString("password")
-        binding.waitingTextFind.text = "비밀번호 : $password \n $roomName 님의 방에 입장 대기중입니다"
+        binding.waitingTextFind.text = "$roomName 님의 방에\n 입장 대기중입니다\n"
         init()
     }
 
