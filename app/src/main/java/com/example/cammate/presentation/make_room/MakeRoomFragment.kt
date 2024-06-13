@@ -66,13 +66,19 @@ class MakeRoomFragment : Fragment(){
 
         // 방 만들기 버튼
         binding.buttonCreate.setOnClickListener {
+            // 닉네임 비어있는지 체크
+            userName = binding.editName.text.toString()
+            if (userName == ""){
+                binding.checkRandom.visibility = View.VISIBLE
+            }
+
             PermissionX.init(requireActivity())
                 .permissions(
                     Manifest.permission.CAMERA
                 ).request{ allGranted, _ ,_ ->
                     if (allGranted){
                         userName = binding.editName.text.toString()
-                        val password:String = binding.editPassword.text.toString()
+                        val password = binding.editPassword.text.toString()
                         val tempMac = "2.2.2.2"
                         val sendData = Bundle().also {
                             it.putString("nickname", userName)
