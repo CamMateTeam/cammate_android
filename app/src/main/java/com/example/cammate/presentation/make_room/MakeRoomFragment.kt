@@ -72,27 +72,29 @@ class MakeRoomFragment : Fragment(){
                 binding.checkRandom.visibility = View.VISIBLE
             }
 
-            PermissionX.init(requireActivity())
-                .permissions(
-                    Manifest.permission.CAMERA
-                ).request{ allGranted, _ ,_ ->
-                    if (allGranted){
-                        userName = binding.editName.text.toString()
-                        val password = binding.editPassword.text.toString()
-                        val tempMac = "2.2.2.2"
-                        val sendData = Bundle().also {
-                            it.putString("nickname", userName)
-                            it.putString("password", password) //password로 바꿔야 함
+            else {
+                PermissionX.init(requireActivity())
+                        .permissions(
+                                Manifest.permission.CAMERA
+                        ).request { allGranted, _, _ ->
+                            if (allGranted) {
+                                userName = binding.editName.text.toString()
+                                val password = binding.editPassword.text.toString()
+                                val tempMac = "2.2.2.2"
+                                val sendData = Bundle().also {
+                                    it.putString("nickname", userName)
+                                    it.putString("password", password) //password로 바꿔야 함
+                                }
+                                // tempMac -> deviceId로 변경해야 함
+                                val roomData = PostRequest(tempMac, userName!!, password)
+                                val retrofitWork = RetrofitWork(roomData)
+                                retrofitWork.work()
+                                findNavController().navigate(R.id.action_makeRoomFragment_to_waitingRoomFragment, sendData)
+                            } else {
+                                Toast.makeText(requireActivity(), "you should accept all permissions", Toast.LENGTH_LONG).show()
+                            }
                         }
-                        // tempMac -> deviceId로 변경해야 함
-                        val roomData = PostRequest(tempMac, userName!!,password)
-                        val retrofitWork = RetrofitWork(roomData)
-                        retrofitWork.work()
-                        findNavController().navigate(R.id.action_makeRoomFragment_to_waitingRoomFragment,sendData)
-                    } else {
-                        Toast.makeText(requireActivity(),"you should accept all permissions",Toast.LENGTH_LONG).show()
-                    }
-                }
+            }
         }
     }
 
