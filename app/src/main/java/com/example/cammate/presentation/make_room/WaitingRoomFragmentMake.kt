@@ -43,7 +43,7 @@ class WaitingRoomFragmentMake : Fragment(), NewMessageInterface {
         super.onViewCreated(view, savedInstanceState)
         userName = arguments?.getString("nickname")
         val password = arguments?.getString("password")
-        binding.waitingTextMake.text = "비밀번호 : $password \n $userName 님의 방에\n 사람이 들어올 때까지 대기중입니다\n"
+        binding.waitingTextMake.text = "비밀번호 : $password \n $userName 님의 방에 사람이 들어올 때까지 대기중입니다"
         init()
     }
 
@@ -138,14 +138,20 @@ class WaitingRoomFragmentMake : Fragment(), NewMessageInterface {
                 roomName = message.name!!
                 Log.d("offer_Received", "offer_received")
                 requireActivity().runOnUiThread{
+                    // 원래 글자 안 보이게
+                    binding.waitingTextMake.visibility = View.GONE
                     binding.loadingBarMake.visibility = View.GONE
-                    binding.incomingNameTV.text = "$roomName 님이 입장하려고 합니다"
+
+                    // 알림창 뜨게
                     binding.incomingCallLayout.visibility = View.VISIBLE
 
+                    // 거절 시
                     binding.rejectButton.setOnClickListener {
                         binding.incomingCallLayout.visibility = View.GONE
                         // incomingCallLayout invisible
                     }
+
+                    // 수락 시
                     binding.acceptButton.setOnClickListener {
                         // find waitfragment한테 함수 보내서 (find에서 함수값 체크하고? intent로 callActivity로 넘어가)
                         val intent = Intent(getActivity(), MakerCallActivity::class.java)
